@@ -1,0 +1,80 @@
+{% extends 'estore/main.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout</title>
+    <style>
+        h1 {
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+{% block content %}
+<h1>测试Checkout</h1>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="box-element" id="form-warpper">
+                <form id="form">
+                    <div id="customer-info">
+                        <div class="form-field">
+                            <input required class="form-field" type="text" name="name" placeholder="Name..">
+                        </div>
+                        <div class="form-field">
+                            <input required class="form-field" type="phone-num" name="phone-num" placeholder="Phone..">
+                        </div>
+
+                    </div>
+                    <div id="Delivery-info">
+                        <hr>
+                        <p>Delivery Information</p>
+                        <hr>
+                        <div class="form-field">
+                            <input class="form-control" type="text" name="address" placeholder="Address..">
+                        </div>
+                        <div class="form-field">
+                            <input class="form-control" type="text" name="city" placeholder="City..">
+                        </div>
+                        <div class="form-field">
+                            <input class="form-control" type="text" name="country" placeholder="Country..">
+                        </div>
+                        <div class="form-field">
+                            <input class="form-control" type="text" name="postcode" placeholder="Postcode..">
+                        </div>
+
+                    </div>
+
+                    <hr>
+                    <input id="form-button" class="btn btn-success btn-block" type="submit" value="Continue">
+                </form>
+
+            </div>
+        </div>
+        <br>
+        <div class="box-element hidden" id="payment-info">
+            <small>Payment Options:</small>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="box-element">
+                <a class="btn btn-outline-dark" href="{% url 'cart' %}">&#x2190; Back to Cart</a>
+                <hr>
+                <h3>Order Summary</h3>
+                <hr>
+                <div class="cart-row">
+                    <div style="flex: 2"><img class="row-image" src="{% static 'images/index1.jpg' %}"></div>
+                    <div style="flex: 2"><p>Product 1</p></div>
+                    <div style="flex: 1"><p></p>￡20</div>
+                    <div style="flex: 1"><p></p>x3</div>
+                </div>
+                <h5>Items:    3</h5>
+                <h5>Total:    ￡60</h5>
+
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+</body>
+</html>
