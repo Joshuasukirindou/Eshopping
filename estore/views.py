@@ -6,6 +6,16 @@ import json
 
 
 def estore(request):
+
+    if request.user.is_authenticated:
+        customer = request.user.customer
+        order, created = Order.objects.get_or_create(customer=customer, complete=False)
+        items = order.orderitem_set.all()
+
+    else:
+        items = []
+        order = {'get_cart_items': 0, 'get_cart_total': 0}
+
     products = Product.objects.all()
     context = {'products':products}
     return render(request, 'estore/store.html', context)
@@ -69,3 +79,8 @@ def addItems(request):
         orderItem.delete()
 
     return JsonResponse('Item was added', safe=False)
+
+
+def processOrder(request):
+    print('Data:', request.body)
+    return JsonResponse('Payment accessed!', safe=False)
