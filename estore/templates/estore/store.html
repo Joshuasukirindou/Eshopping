@@ -11,26 +11,65 @@
             font-weight: bold;
             text-align: center;
         }
+         .paginator {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .step-links a, .current-page {
+            padding: 5px 10px;
+            border: 1px solid #ddd;
+            margin: 0 5px;
+            border-radius: 3px;
+            text-decoration: none;
+            color: #000;
+            background-color: #f7f7f7;
+        }
+        .step-links a:hover {
+            background-color: #ddd;
+        }
+        .current-page {
+            border-color: #007bff;
+            background-color: #007bff;
+            color: #fff;
+        }
     </style>
 </head>
 <body>
 {% block content %}
-<h1>测试Store</h1>
+<h1>Joshua Wine Store</h1>
     <div class="row">
-        {% for product in products %}
+        {% for product in page_obj %}
         <div class="col-lg-4">
             <img class="thumbnail" src="{{ product.imageURL }}">
             <div class="box-element product">
                 <h6><strong>{{ product.name }}</strong></h6>
                 <h6><p>Product Code:  {{ product.product_id }}</p></h6>
 
-                <button data-product={{ product.id }} data-action="add"class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
-                <a class="btn btn-outline-success" href="#">View Details</a>
+                <button data-product={{ product.id }} data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+                <a class="btn btn-outline-success" href="details/{{ product.product_id }}">View Details</a>
                 <h4 style="display: inline-block; float: right">£ {{ product.price|floatformat:2 }}</h4>
 
             </div>
         </div>
         {% endfor %}
+    </div>
+    <div class="paginator">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{ page_obj.previous_page_number }}">&lsaquo; prev</a>
+            {% endif %}
+
+            <span class="current-page">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+            </span>
+
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">next &rsaquo;</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+            {% endif %}
+        </span>
     </div>
 {% endblock content %}
 </body>

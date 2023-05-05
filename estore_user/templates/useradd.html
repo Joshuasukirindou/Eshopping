@@ -1,0 +1,28 @@
+
+
+<div class="main-content">
+    <div class="container mt-5">
+        <h1>Add New User</h1>
+        <hr>
+        <form method="POST" action="{% url 'add_user' %}">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <div class="mb-3">
+                <label for="confirm-password" class="form-label">Repeat Password</label>
+                <input type="password" class="form-control" id="confirm-password" name="confirm_password" required>
+            </div>
+
+            <span style="color:red">{{err_message}}</span><br>
+
+            <button type="submit" class="btn btn-primary">Submit</button>&nbsp;&nbsp;
+            <a href="/user/" class="btn btn-primary">Return to userlist</a>
+        </form>
+    </div>
+</div>

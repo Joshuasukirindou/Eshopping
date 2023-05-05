@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import Product, Order, OrderItem
 from django.http import JsonResponse
 import json
+from django.core.paginator import Paginator
 # Create your views here.
 
 
@@ -17,7 +18,10 @@ def estore(request):
         order = {'get_cart_items': 0, 'get_cart_total': 0}
 
     products = Product.objects.all()
-    context = {'products':products}
+    paginator = Paginator(products, 6)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    context = {'page_obj': page_obj}
     return render(request, 'estore/store.html', context)
 
 
@@ -84,3 +88,5 @@ def addItems(request):
 def processOrder(request):
     print('Data:', request.body)
     return JsonResponse('Payment accessed!', safe=False)
+
+
