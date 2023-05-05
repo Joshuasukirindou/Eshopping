@@ -71,12 +71,12 @@
             </form>
         </div>
         <div class="form-inline my-2 my-lg-0">
-          {% if user.is_authticated %}
-              <p class="my-2 my-lg-0 text-while">Not logged</p>
-              <a href="{% url 'login_view' %}" class="btn btn-warning">Login</a>
-          {% else %}
+          {% if user.is_authenticated %}
               <p class="my-2 my-lg-0 text-while">Welcome!{{ user.username }}</p>
-              <a href="{% url 'logout_view' %}" class="btn btn-warning">Logout</a>
+              <a href="{% url 'admin:logout' %}" class="btn btn-warning">Logout</a>
+          {% else %}
+              <p class="my-2 my-lg-0 text-while">Not logged</p>
+              <a href="{% url 'admin:login' %}" class="btn btn-warning">Login</a>
           {% endif %}
         </div>
           <a href="{% url 'cart' %}">
