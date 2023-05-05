@@ -47,7 +47,7 @@
                 <h6><p>Product Code:  {{ product.product_id }}</p></h6>
 
                 <button data-product={{ product.id }} data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
-                <a class="btn btn-outline-success" href="details/{{ product.product_id }}">View Details</a>
+                <a class="btn btn-outline-success" href="{% url 'detail' product.product_id %}">View Details</a>
                 <h4 style="display: inline-block; float: right">£ {{ product.price|floatformat:2 }}</h4>
 
             </div>

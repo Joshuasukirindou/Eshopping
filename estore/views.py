@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Product, Order, OrderItem
 from django.http import JsonResponse
 import json
@@ -23,6 +23,12 @@ def estore(request):
     page_obj = paginator.get_page(page_number)
     context = {'page_obj': page_obj}
     return render(request, 'estore/store.html', context)
+
+
+def product_detail(request, product_id):
+    product = get_object_or_404(Product, product_id=product_id)
+    context = {'product': product}
+    return render(request, 'estore/details.html', context)
 
 
 def cart(request):

@@ -69,7 +69,7 @@
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-6">
-                <form class="auth-form" method="post" action="">
+                <form class="auth-form" method="post" action="{% url 'store' %}">
                     {% csrf_token %}
                     <h2>Login</h2>
                     <label for="username">Username:</label>
@@ -80,7 +80,9 @@
                     <input type="submit" class="btn btn-success" style="margin-left: -15px;" value="Login">
                 </form>
                 <div class="back-btn">
-                    <a href="/">Back to Home</a>
+                    <p>Don't have an account?</p>
+                    <a href="{% url 'add_user' %}">Register</a>
+                    <a href="{% url 'store' %} }}">Back to Home</a>
                 </div>
             </div>
         </div>

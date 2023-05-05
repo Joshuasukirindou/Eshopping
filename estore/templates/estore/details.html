@@ -1,0 +1,42 @@
+{% extends 'estore/main.html' %}
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>Product Detail</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <style>
+
+        .product-img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 400px;
+            width: 400px;
+            overflow: hidden;
+        }
+
+        .product-img img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+        }
+    </style>
+</head>
+{% block content %}
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="product-img">
+                <img class="thumbnail " src="{{ product.imageURL }}" style="width: 400px; height: 400px;">
+                <h4>{{ product.name }}</h4>
+                <p>Product Code: {{ product.product_id }}</p>
+                <p>Product Country: {{ product.country }}</p>
+                <p>Product Size: {{ product.size }}</p>
+                <p>Product ABV: {{ product.ABV }}</p>
+            </div>
+
+        <a class="btn btn-outline-dark" href="{% url 'store' %}">&#x2190; Back to Shopping</a>
+        </div>
+    </div>
+
+{% endblock %}

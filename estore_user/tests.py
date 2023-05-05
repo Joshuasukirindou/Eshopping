@@ -7,6 +7,7 @@ class EstoreAuthenTestCase(TestCase):
     def setUp(self):
       EstoreUser.objects.create(user_name="testuser", user_password=hashlib.md5("testpassword".encode('utf-8')).hexdigest(), user_level=2, login_status=0, is_banned=0, is_delete=0, is_approved=1)
 
+
 def test_login(self):
     c = Client()
     response = c.post('/login/', {'username': 'testuser', 'password': 'testpassword'})
