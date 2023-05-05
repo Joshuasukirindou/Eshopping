@@ -2,7 +2,7 @@
 
 ## 1 - About us
 
-Our website application used Django for the database and its creation, and edit operations. This website application allows users to shopping online  with login , which means that clients should browse as a user. 
+This website application used Django for the database and its creation, and edit operations. This website application allows users to shopping online  with login , which means that clients should browse as a user. 
 
 ## 2 - Main features
 
@@ -15,7 +15,7 @@ Our website application used Django for the database and its creation, and edit 
 
 ## 3 - Database overview
 
-![](https://ibb.co/JzPkLdd)
+![](https://s2.loli.net/2023/05/06/z7HwmCaKZ2X9dn8.png)
 
 ## 4 - Installation
 
