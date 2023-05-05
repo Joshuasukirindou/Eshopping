@@ -4,7 +4,7 @@ attrs==23.1.0
 behave==1.2.6
 certifi==2022.12.7
 cffi==1.15.1
-Django==4.2
+Django==3.2.10
 django-behave==0.1.6
 exceptiongroup==1.1.1
 h11==0.14.0
