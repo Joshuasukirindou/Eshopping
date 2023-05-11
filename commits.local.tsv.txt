@@ -1,0 +1,20 @@
+d2e6539	Joshuasukirindou	Fri May 5 19:13:24 2023	'fixlogin'
+999f679	Joshuasukirindou	Fri May 5 18:02:41 2023	'fixpattern'
+40ac99b	Joshuasukirindou	Fri May 5 17:56:03 2023	'fixconflict'
+4a76766	Joshuasukirindou	Fri May 5 17:51:51 2023	'upgrade2.0'
+0814ba2	BANGQI LIU	Fri May 5 16:50:32 2023	codiohost
+77c49fe	Joshuasukirindou	Fri May 5 16:34:39 2023	Update settings.py
+c35644b	Joshuasukirindou	Fri May 5 16:22:15 2023	Update requirements.txt
+de872b1	Joshuasukirindou	Fri May 5 16:17:23 2023	Update requirements.txt
+9535167	Joshuasukirindou	Fri May 5 16:12:43 2023	'update'
+0203305	Joshuasukirindou	Fri May 5 15:52:16 2023	'ver7.0'
+eaf6d9d	Joshuasukirindou	Fri May 5 03:56:06 2023	'ver6.0'
+5aff26c	Joshuasukirindou	Thu May 4 02:11:46 2023	'ver5.0'
+5e467a4	Joshuasukirindou	Wed May 3 17:16:59 2023	ver3.0
+63f5e08	Joshuasukirindou	Wed May 3 04:13:15 2023	'ver2.0'
+4ac5f7f	Joshuasukirindou	Tue May 2 17:09:40 2023	'deem4.0'
+9535167	Joshuasukirindou	Mon May 1 16:12:43 2023	'update'
+0203305	Joshuasukirindou	Sun Apr 30 15:52:16 2023	'demo3.0'
+eaf6d9d	Joshuasukirindou	Sat Apr 29 03:56:06 2023	'demo2.0'
+5aff26c	Joshuasukirindou	Fri Apr 28 02:11:46 2023	'demo1.0'
+5e467a4	Joshuasukirindou	Thu Apr 27 17:16:59 2023	Initial commit
